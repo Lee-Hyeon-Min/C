@@ -86,7 +86,7 @@ void sonic1()
    }
    else if(distance1>60)
    {
-      LED_PORT &= ~(1<<LED1);
+      LED_PORT &= ~(1<<LED1); 1 bit left shift 한 값 마스킹
    }
    
 }
@@ -174,19 +174,19 @@ void checking_port()
       fnd_number(3);
       fnd_display();
    }
-   else if(LED_PORT == 0x10 || LED_PORT == 0x20 || LED_PORT == 0x40)      //주차가능대수 1대
+   else if(LED_PORT == 0x10 || LED_PORT == 0x20 || LED_PORT == 0x40)      //주차가능대수 2대
    {
       fnd_number(2);
       fnd_display();
    }
    
-   else if(LED_PORT == 0x30 ||LED_PORT == 0x50 ||LED_PORT == 0x60)      //주차가능대수 2대
+   else if(LED_PORT == 0x30 ||LED_PORT == 0x50 ||LED_PORT == 0x60)      //주차가능대수 1대
    {
       fnd_number(1);
       fnd_display();
    }
    
-   else if(LED_PORT == 0x70)   //주차가능대수 3대
+   else if(LED_PORT == 0x70)   //주차가능대수 0대
    {
       fnd_number(0);
       fnd_display();
